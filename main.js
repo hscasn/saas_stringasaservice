@@ -4,9 +4,10 @@ const url  = require('url');
 http.createServer((req, res) => {
     const number = url.parse(req.url, true)
                       .query
-                      .number;
+                      .number
+                      .trim();
 
-    if (!/^[0-9]+$/.test(number))
+    if (!/^[+-]?[0-9]+$/.test(number))
         throw "Not a number!";
 
     res.writeHead(200, { 'Content-Type': 'text/plain' });
