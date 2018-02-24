@@ -1,5 +1,9 @@
 # SAAS - String As A Service
-An amazing application that takes input and spits out output
+An amazing application that takes numbers as input and spits out strings as output
+
+Example:
+Input: 42
+Output: "42"
 
 Decimals are not supported
 
