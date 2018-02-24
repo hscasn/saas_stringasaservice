@@ -11,6 +11,6 @@ Then test it:
 
 localhost:8000/?number=42
 
-
+Alternatively, try using the yaml in the deployment directory for deploying with Kubernetes
 
 ...or not. Up to you!
