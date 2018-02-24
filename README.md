@@ -1,6 +1,8 @@
 # SAAS - String As A Service
 An amazing application that takes input and spits out output
 
+Decimals are not supported
+
 
 Run it:
 
