@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: saas
+spec:
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+    nodePort: 32000
+  selector:
+    app: saas
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saas
+spec:
+  selector:
+    matchLabels:
+      app: saas
+  replicas: 4
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: saas
+    spec:
+      containers:
+      - image: hscasn/saas_stringasaservice:latest
+        name: saas
+        ports:
+        - containerPort: 8000
+          name: saas
